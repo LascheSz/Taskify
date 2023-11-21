@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { Plus } from "lucide-react";
+import { Sidebar } from "./sidebar";
+import { MobileSidebar } from "./mobile-sidbar";
 
 
 export const Navbar = async () => {
@@ -29,7 +31,7 @@ export const Navbar = async () => {
     return (
         <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm 
         bg-white flex items-center">
-            {/* TODO: Mobile Sidebar */}
+            <MobileSidebar />
             <div className="flex items-center gap-x-4">
                 <div className="hide md:flex">
                     <Logo />
