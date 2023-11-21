@@ -26,8 +26,6 @@ export const Navbar = async () => {
     const user = await currentUser();
     const { userId } = auth();
 
-
-
     return (
         <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm 
         bg-white flex items-center">
@@ -52,7 +50,7 @@ export const Navbar = async () => {
                 hidePersonal
                 afterCreateOrganizationUrl="/organization/:id"
                 afterLeaveOrganizationUrl="/select-org"
-                afterSelectOrganizationUrl="organization/:id"
+                afterSelectOrganizationUrl="/organization/:id"
                 appearance={{
                     elements: {
                         rootbox: {
