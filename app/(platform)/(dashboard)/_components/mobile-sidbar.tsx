@@ -34,7 +34,7 @@ export const MobileSidebar = () => {
     <>
       <Button
         onClick={onOpen}
-        className="block md:hidden mr-2"
+        className="block md:hidden mr-1"
         variant="ghost"
         size="sm"
       >

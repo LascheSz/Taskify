@@ -44,7 +44,7 @@ export const Navbar = async () => {
                     <Plus className="h-4 w-4" />
                 </Button>
             </div>
-            <div className="flex-grow text-center">
+            <div className="flex-grow text-center hidden md:block">
                 {getGreeting()} {user?.username} {getEmoji()}
             </div>
             <div className="ml-auto flex items-center gap-x-2">
