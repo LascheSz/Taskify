@@ -72,7 +72,7 @@ export const Sidebar = ({
   return (
     <>
       <div className="font-medium text-xs flex items-center mb-1">
-        <span className="pl-4">
+        <span className="pl-1">
           Workspaces
         </span>
         <Button
