@@ -1,10 +1,10 @@
 "use client";
 
-import { create } from "./actions/create-board";
 import { Button } from "@/components/ui/button";
 import { useFormState } from "react-dom";
 import { FormInput } from "./form-input";
 import { FormButton } from "./form-buttons";
+import { create } from "@/actions/create-board";
 
 export const Form = () => {
     const initialState = { message: "", errors: {} };
