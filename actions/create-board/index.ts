@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 
 import { db } from "@/lib/db";
-import { createSafeAction } from "@/lib/create-save-action";
+import { createSafeAction } from "@/lib/create-safe-action";
 
 import { InputType, ReturnType } from "./types";
 import { CreateBoard } from "./schema";
@@ -17,7 +17,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
   
     if (!userId || !orgId) {
       return {
-        error: "Unauthorized",
+        errors: "Unauthorized",
       };
     }
 
@@ -33,7 +33,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         });
     } catch (error) {
         return { 
-            error: "Error creating board."
+            errors: "Error creating board."
         }
     }
     revalidatePath('/board/${board.id}');
