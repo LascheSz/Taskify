@@ -12,7 +12,7 @@ const headingFont = localFont ({
 export const Logo = () => {
     return (
         <Link href="/">
-        <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
+        <div className="hover:opacity-75 transition items-center gap-x-2 md:flex ">
             <Image 
                 src="/logo.svg" 
                 alt="Logo" 

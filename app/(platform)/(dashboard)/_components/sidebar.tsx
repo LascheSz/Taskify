@@ -36,15 +36,17 @@ export const Sidebar = ({
       infinite: true,
     },
   });
-
+// Mehrere Organization offen haben in der Sidebar!
   const defaultAccordionValue: string[] = Object.keys(expanded)
-    .reduce((acc: string[], key: string) => {
-      if (expanded[key]) {
-        acc.push(key);
-      }
+   .reduce((acc: string[], key: string) => {
+     if (expanded[key]) {
+       acc.push(key);
+     }
 
-      return acc;
+     return acc;
   }, []);
+  //
+  // const defaultAccordionValue = Object.keys(expanded).find(key => expanded[key]);
 
   const onExpand = (id: string) => {
     setExpanded((curr) => ({
@@ -52,6 +54,7 @@ export const Sidebar = ({
       [id]: !expanded[id],
     }));
   };
+
 
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
     return (
@@ -72,7 +75,7 @@ export const Sidebar = ({
   return (
     <>
       <div className="font-medium text-xs flex items-center mb-1">
-        <span className="pl-1">
+        <span className="pl-1" style={{ fontSize: '16px', fontWeight: 'bold'}}>
           Workspaces
         </span>
         <Button
@@ -89,10 +92,10 @@ export const Sidebar = ({
           </Link>
         </Button>
       </div>
-      <Accordion
+      <Accordion // Zum öffnen der Organization
         type="multiple"
         defaultValue={defaultAccordionValue}
-        className="space-y-2"
+        className="space-y-3"
       >
         {userMemberships.data.map(({ organization }) => (
           <NavItem
@@ -101,6 +104,7 @@ export const Sidebar = ({
             isExpanded={expanded[organization.id]}
             organization={organization as Organization}
             onExpand={onExpand}
+            
           />
         ))}
       </Accordion>
