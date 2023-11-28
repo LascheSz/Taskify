@@ -16,7 +16,9 @@ export const BoardList = () => {
                 flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition
                 p-4 w-56" // Padding, maximale Breite
                 >
-                    <span className="text-sm">Create new board</span>
+                    <span className="text-sm">
+                        Create new board
+                    </span>
                     <span className="text-xs">
                         5 Remaining
                     </span>
