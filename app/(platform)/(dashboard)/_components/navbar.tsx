@@ -29,25 +29,24 @@ export const Navbar = async () => {
     const { userId } = auth();
 
     return (
-        <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm 
-        bg-white flex items-center">
+        <nav className="fixed z-50 top-1 px-4 w-full border-b shadow-sm 
+        bg-white flex items-center ">
             <MobileSidebar />
             <div className="flex items-center gap-x-4">
-                <div className="hide md:flex">
+                <div className="hide md:flex w-18">
                     <Logo />
                 </div>
-
-                <Button variant = "primary" size="sm" className="rounded-sm hidden md:block h-auto py-1.5 px-2">
+                <Button variant = "primary" size="default" className="rounded-sm hidden md:block h-auto py-1.5 px-2">
                     Create
                 </Button>
                 <Button variant = "primary" size="sm" className="rounded-sm block md:hidden">
                     <Plus className="h-4 w-4" />
                 </Button>
             </div>
-            <div className="flex-grow text-center hidden md:block">
+            <div className="flex-grow text-center hidden md:block text-lg">
                 {getGreeting()} {user?.username} {getEmoji()}
             </div>
-            <div className="ml-auto flex items-center gap-x-2">
+            <div className="ml-auto flex items-center gap-x-2 text-lg">
                 <OrganizationSwitcher 
                 hidePersonal
                 afterCreateOrganizationUrl="/organization/:id"
@@ -67,8 +66,10 @@ export const Navbar = async () => {
                 appearance={{
                     elements: {
                         avatarBox: {
-                            height: 30,
-                            width: 30,
+                            height: 40,
+                            width: 40,
+                            paddingBottom: 0,
+                            marginTop: 0,
                         }
                     }
                 }}
