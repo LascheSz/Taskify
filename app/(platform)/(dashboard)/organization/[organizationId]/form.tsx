@@ -23,13 +23,15 @@ export const Form = () => {
     }
     
     return (
-        <form action={onSubmit}>
-            <div className="flex flex-col space-y-2">
+        <form action={onSubmit} className="flex flex-row items-center">
+            <div className="flex flex-col space-x-2 items-center">
                 <FormInput 
                 id="title"
                 errors = {fieldErrors} />
             </div>
-            <FormButton />
+            <div className="ml-2">
+                <FormButton />
+            </div>
     </form>
     );
 };
