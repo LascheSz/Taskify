@@ -11,9 +11,9 @@ import { FormErrors } from "./form-errors";
 
 interface FormInputProps {
   id: string;
-  label?: "Board Titel";
+  label?: string;
   type?: string;
-  placeholder?: "Test placeholder";
+  placeholder?: string;
   required?: boolean;
   disabled?: boolean;
   errors?: Record<string, string[] | undefined>;
