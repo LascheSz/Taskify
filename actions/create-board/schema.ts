@@ -2,9 +2,9 @@ import { z } from "zod";
 
 export const CreateBoard = z.object({
   title: z.string({
-    required_error: "Title is required",
-    invalid_type_error: "Title is required",
+    required_error: "Gib einen Titel ein!",
+    invalid_type_error: "Gib ein Titel ein!",
   }).min(3, {
-    message: "Title is too short."
+    message: "Title ist zu kurz!"
   }),
 });

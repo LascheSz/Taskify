@@ -11,9 +11,9 @@ import { FormErrors } from "./form-errors";
 
 interface FormInputProps {
   id: string;
-  label?: string;
+  label?: "Board Titel";
   type?: string;
-  placeholder?: string;
+  placeholder?: "Test placeholder";
   required?: boolean;
   disabled?: boolean;
   errors?: Record<string, string[] | undefined>;
@@ -54,7 +54,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(({
           required={required}
           name={id}
           id={id}
-          placeholder={placeholder}
+          placeholder="Titel des Boards"
           type={type}
           disabled={pending || disabled}
           className={cn(
