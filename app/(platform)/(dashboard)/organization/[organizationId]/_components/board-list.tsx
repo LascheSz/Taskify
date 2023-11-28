@@ -1,4 +1,5 @@
-import { User2 } from "lucide-react";
+import { Hint } from "@/components/hint";
+import { HelpCircle, User2 } from "lucide-react";
 
 export const BoardList = () => {
     return (
@@ -14,7 +15,17 @@ export const BoardList = () => {
             p-4 w-56" // Padding, maximale Breite
             >
                 <p className="text-sm">Create new board</p>
-                <span className="text-xs">5 Remaining</span>
+                <span className="text-xs">
+                    5 Remaining
+                </span>
+                <Hint 
+                 sideOffset={40}
+                 description={`
+                 Es stehen 5 Kostenlose Boars für den Basic Plan zur verfügung. 
+                 Mache ein Upgrade um mehr Boards zu erstellen
+                 `}>
+                    <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px"/>
+                </Hint>
             </div>
         </div>
     );
