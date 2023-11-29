@@ -35,7 +35,13 @@ export const FormPopover = ({
             console.log({ error});
             }
     });
-//////////////////////////////////////// Hier 5:03:15 https://youtu.be/pRybm9lXW2c?si=QKCCuiJ12dW4ADCU&t=18195
+
+    const onSubmit = (formData: FormData) => {
+        const title = formData.get("title") as string;
+
+        execute({ title });
+    }
+
     return (
         <Popover>
             <PopoverTrigger>
@@ -55,7 +61,7 @@ export const FormPopover = ({
                         <X className="h-4 w-4"/>
                     </Button>
                 </PopoverClose>
-                <form className="space-y-4">
+                <form action={onSubmit}className="space-y-4">
                     <div className="space-y-4">
                         <FormInput 
                             id="title"
