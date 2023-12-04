@@ -21,15 +21,36 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       };
     }
 
-    const { title } = data;
+    const { title, image } = data;
 
-    let board;
-
-    try {
+    const [
+        imageId,
+        imageThumbUrl,
+        imageFullUrl,
+        imageLinkHTML,
+        imageUserName
+      ] = image.split("|");
+    
+      if (!imageId || !imageThumbUrl || !imageFullUrl || !imageUserName || !imageLinkHTML) {
+        return {
+          errors: "Missing fields. Failed to create board."
+        };
+      }
+    
+      let board;
+    
+      try {
         board = await db.board.create({
-            data: {
-                title,
-            }
+          data: {
+            title,
+            orgId,
+            imageId,
+            imageThumbUrl,
+            imageFullUrl,
+            imageUserName,
+            imageLinkHTML,
+            
+          }
         });
     } catch (error) {
         return { 
