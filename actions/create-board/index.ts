@@ -12,6 +12,7 @@ import { CreateBoard } from "./schema";
 
 
 
+
 const handler = async (data: InputType): Promise<ReturnType> => {
     const { userId, orgId } = auth();
   
@@ -49,7 +50,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
             imageFullUrl,
             imageUserName,
             imageLinkHTML,
-            
           }
         });
     } catch (error) {
@@ -57,7 +57,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
             errors: "Error creating board."
         }
     }
-    revalidatePath('/board/${board.id}');
+    revalidatePath(`/board/${board.id}`)
     return { data: board };
 };
 
