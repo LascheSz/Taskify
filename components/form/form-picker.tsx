@@ -86,7 +86,7 @@ export const FormPicker = ({
             />
             <Image
               src={image.urls.thumb}
-              alt= {image.alt_description}
+              alt="Unsplash image"
               className="object-cover rounded-sm"
               fill  
             />
