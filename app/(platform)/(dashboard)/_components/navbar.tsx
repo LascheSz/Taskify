@@ -5,6 +5,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { Plus } from "lucide-react";
 import { Sidebar } from "./sidebar";
 import { MobileSidebar } from "./mobile-sidbar";
+import { FormPopover } from "@/components/form/form-popover";
 
 
 export const Navbar = async () => {
@@ -36,12 +37,16 @@ export const Navbar = async () => {
                 <div className="hide md:flex w-18">
                     <Logo />
                 </div>
-                <Button variant = "primary" size="default" className="rounded-sm hidden md:block h-auto py-1.5 px-2">
-                    Create
-                </Button>
-                <Button variant = "primary" size="sm" className="rounded-sm block md:hidden">
-                    <Plus className="h-4 w-4" />
-                </Button>
+                <FormPopover align="start" side="bottom" sideOffset={18}>
+                    <Button variant = "primary" size="default" className="rounded-sm hidden md:block h-auto py-1.5 px-2">
+                        Create
+                    </Button>
+                </FormPopover>
+                <FormPopover>
+                    <Button variant = "primary" size="sm" className="rounded-sm block md:hidden">
+                        <Plus className="h-4 w-4" />
+                    </Button>
+                </FormPopover>
             </div>
             <div className="flex-grow text-center hidden md:block text-lg">
                 {getGreeting()} {user?.username} {getEmoji()}

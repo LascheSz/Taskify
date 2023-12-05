@@ -57,6 +57,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
           }
         });
     } catch (error) {
+      console.error(error)
         return { 
             errors: "Fehler beim Erstellen des Boards."
         }
